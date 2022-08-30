@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,4 +46,10 @@ Route::get('/abc/{name}/{num}/{str}', function ($name,$num,$str) {
     
     $a="Hello $name<br>$num<br>招呼語:$str";
     return $a;
+});
+
+Route::get('/abc/{name}/{num}/{str}', function (Request $request,$name,$num,$str) {
+    
+    $a="Hello $name<br>$num<br>招呼語:$str";
+    return view('test',['a123'=>$a]);
 });
