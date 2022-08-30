@@ -22,3 +22,9 @@ Route::get('/f', function () {
 Route::get('/oop', function () {
     return view('oop');
 });
+Route::get('/admin_1', function () {
+    return view('admin1.index');
+});
+Route::get('/admin_2', function () {
+    return view('admin1.admin2.index');
+});
