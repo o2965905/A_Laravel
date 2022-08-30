@@ -28,3 +28,21 @@ Route::get('/admin_1', function () {
 Route::get('/admin_2', function () {
     return view('admin1.admin2.index');
 });
+Route::get('/abc', function () {
+    return 'Hello World';
+});
+Route::get('/abc/{name}', function ($name) {
+    
+    $a="Hello $name";
+    return $a;
+});
+Route::get('/abc/{name}/{num}', function ($name,$num) {
+    
+    $a="Hello $name<br>$num";
+    return $a;
+});
+Route::get('/abc/{name}/{num}/{str}', function ($name,$num,$str) {
+    
+    $a="Hello $name<br>$num<br>招呼語:$str";
+    return $a;
+});
