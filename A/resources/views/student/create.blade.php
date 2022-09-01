@@ -12,9 +12,8 @@
 <body>
 
 <div class="container">
-  <h2>Hover Rows</h2>
-  <p>The .table-hover class enables a hover state on table rows:</p>  
-  <a href="{{route('students.create')}}" class="btn btn-success">新增</a>          
+  <h2>新增學生資料</h2>
+  <p>The .table-hover class enables a hover state on table rows:</p>            
   <table class="table table-hover">
     <thead>
       <tr>
@@ -24,16 +23,20 @@
         <th>數學</th>
       </tr>
     </thead>
-    <tbody>
-        @foreach($data as $student)
-      <tr>
-        <td>{{$student->name}}</td>
-        <td>{{$student->chinese}}</td>
-        <td>{{$student->english}}</td>
-        <td>{{$student->math}}</td>
-      </tr>
-      @endforeach
-    </tbody>
+<form action="{{route('students.store')}}" method="post">
+  @csrf
+  <tbody>
+    <tr>
+      <td><input type="text" name="name" id="name"></td>
+      <td><input type="number" name="chinese" id="chinese"></td>
+      <td><input type="number" name="english" id="english"></td>
+      <td><input type="number" name="math" id="math"></td>
+    </tr>
+    <tr>
+      <td colspan="4"><input type="submit" value="確認新增" class="btn btn-success"></td>
+    </tr>
+  </tbody>
+</form>
   </table>
 </div>
 
