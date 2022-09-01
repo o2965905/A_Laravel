@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use App\Http\Controllers\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,3 +54,6 @@ Route::get('/abc/{name}/{num}/{str}', function (Request $request,$name,$num,$str
     $a="Hello $name<br>$num<br>招呼語:$str";
     return view('test',['a123'=>$a]);
 });
+
+
+Route::resource('students',StudentController::class);
