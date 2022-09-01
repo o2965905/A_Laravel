@@ -18,9 +18,9 @@ class StudentController extends Controller
         // dd('resource Ok');
         // return view('student.index');
         $data=Student::all();
-        dd($data);
+        // dd($data);
 
-        return view('student,index');
+        return view('student.index',['data'=>$data]);
     }
 
     /**
