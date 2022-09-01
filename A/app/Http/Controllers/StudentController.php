@@ -31,6 +31,8 @@ class StudentController extends Controller
     public function create()
     {
         //
+        // dd('create ok');
+        return view('student.create');
     }
 
     /**
@@ -42,6 +44,17 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         //
+        // dd($request->all());
+        $student = new Student();
+
+        $student->name = $request->name;
+        $student->chinese = $request->chinese;
+        $student->english = $request->english;
+        $student->math = $request->math;
+
+        $student->save();
+
+        return redirect()->route('students.index');
     }
 
     /**
