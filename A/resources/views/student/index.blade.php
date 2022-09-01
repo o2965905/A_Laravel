@@ -32,10 +32,13 @@
         <td>{{$student->chinese}}</td>
         <td>{{$student->english}}</td>
         <td>{{$student->math}}</td>
+<<<<<<< HEAD
         <td>
         <a href="{{route('students.edit',['student'=>$student->id]);}}" class="btn btn-warning">編輯</a>  
         <a href="{{route('students.create')}}" class="btn btn-danger">刪除</a>  
         </td>
+=======
+>>>>>>> 1c935e6ed3551cf4a9d73beae2962496f3cb89fd
       </tr>
       @endforeach
     </tbody>
